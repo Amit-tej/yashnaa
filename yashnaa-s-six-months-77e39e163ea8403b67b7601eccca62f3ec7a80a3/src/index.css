@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300;400;500;600&family=Caveat:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 40 30% 92%;
+
+    --card: 222 40% 10%;
+    --card-foreground: 40 30% 92%;
+
+    --popover: 222 40% 10%;
+    --popover-foreground: 40 30% 92%;
+
+    --primary: 38 75% 55%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 222 30% 14%;
+    --secondary-foreground: 40 20% 80%;
+
+    --muted: 222 25% 12%;
+    --muted-foreground: 220 15% 55%;
+
+    --accent: 38 60% 45%;
+    --accent-foreground: 40 30% 95%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 20% 18%;
+    --input: 222 20% 18%;
+    --ring: 38 75% 55%;
+
+    --radius: 0.75rem;
+
+    --gold: 38 75% 55%;
+    --gold-glow: 38 80% 70%;
+    --midnight: 222 47% 6%;
+    --midnight-light: 222 40% 12%;
+    --warm-white: 40 30% 92%;
+    --star: 45 100% 85%;
+
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Space Grotesk', sans-serif;
+    --font-handwriting: 'Caveat', cursive;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  ::selection {
+    background: hsl(38 75% 55% / 0.3);
+    color: hsl(40 30% 95%);
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 40px hsl(38 80% 70% / 0.4), 0 0 80px hsl(38 80% 70% / 0.15);
+  }
+
+  .text-glow-sm {
+    text-shadow: 0 0 20px hsl(38 80% 70% / 0.3);
+  }
+
+  .bg-gradient-night {
+    background: linear-gradient(180deg, hsl(222 47% 4%) 0%, hsl(222 47% 8%) 50%, hsl(222 40% 12%) 100%);
+  }
+
+  .bg-gradient-gold {
+    background: linear-gradient(135deg, hsl(38 75% 55%) 0%, hsl(45 80% 65%) 100%);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 15px hsl(38 75% 55% / 0.1), inset 0 0 15px hsl(38 75% 55% / 0.05);
+  }
+
+  .divider-star::after {
+    content: '✦';
+    display: block;
+    text-align: center;
+    color: hsl(38 75% 55%);
+    font-size: 0.75rem;
+    letter-spacing: 1em;
+    margin-top: 2rem;
+  }
+}
